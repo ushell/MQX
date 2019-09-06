@@ -12,7 +12,7 @@ local stockList = 'SH000001'
 
 -- 价格阈值
 local stockMonitor = {}
-stockMonitor['SH000001'] = {'2960', '>='}
+stockMonitor['SH000001'] = {'2999', '>='}
 
 function updateMenubar()
     menubar:setMenu(menuData)
@@ -64,7 +64,7 @@ function monitor(stock)
 				hs.alert(message)
 			end
 
-			if (op == '<=' and stock.current >= tonumber(price)) then
+			if (op == '<=' and stock.current <= tonumber(price)) then
 				hs.alert(message)
 			end
 		end
